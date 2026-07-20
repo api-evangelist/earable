@@ -1,0 +1,33 @@
+generated: '2026-07-18'
+method: searched
+source: https://frenzband.com/.well-known/openid-configuration
+notes: >-
+  Auth on the frenzband.com storefront is the Shopify Customer Account API
+  (OIDC/OAuth2), advertised at /.well-known/openid-configuration and
+  /.well-known/oauth-authorization-server. Platform-provided by Shopify; there is
+  no first-party Earable developer API. Endpoints resolve under
+  account.frenzband.com.
+summary:
+  types:
+  - oauth2
+  - openIdConnect
+  oauth2_flows:
+  - authorizationCode
+schemes:
+- name: shopify-customer-account
+  type: openIdConnect
+  issuer: https://shopify.com/authentication/66693300444
+  openIdConnectUrl: https://frenzband.com/.well-known/openid-configuration
+  authorization_endpoint: https://account.frenzband.com/authentication/oauth/authorize
+  token_endpoint: https://account.frenzband.com/authentication/oauth/token
+  end_session_endpoint: https://account.frenzband.com/authentication/logout
+  jwks_uri: https://account.frenzband.com/authentication/.well-known/jwks.json
+  response_types_supported:
+  - code
+  token_endpoint_auth_methods_supported:
+  - client_secret_basic
+  scopes_supported:
+  - openid
+  - email
+  - customer-account-api:full
+  - customer-account-mcp-api:full
