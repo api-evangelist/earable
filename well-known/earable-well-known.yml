@@ -1,0 +1,26 @@
+generated: '2026-07-18'
+method: searched
+source: https://frenzband.com/.well-known/
+host: https://frenzband.com
+notes: >-
+  frenzband.com is the FRENZ by Earable Neuroscience storefront, hosted on
+  Shopify. The discoverable /.well-known/ surface is Shopify-platform provided:
+  OIDC/OAuth points at the Shopify Customer Account API (account.frenzband.com),
+  and a Universal Commerce Protocol (UCP) profile advertises an agent-commerce
+  MCP endpoint.
+documents:
+- path: /.well-known/openid-configuration
+  status: 200
+  file: earable-openid-configuration.json
+- path: /.well-known/oauth-authorization-server
+  status: 200
+  file: earable-oauth-authorization-server.json
+- path: /.well-known/ucp
+  status: 200
+  file: earable-ucp.json
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404

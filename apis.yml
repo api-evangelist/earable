@@ -1,7 +1,17 @@
 aid: earable
 name: Earable
-description: Earable is a company surfaced as a portfolio company of 500-global and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Earable Neuroscience is the maker of FRENZ Brainband, marketed as the world's
+  first AI sleep-tech wearable that tracks and stimulates brain activity through
+  bone-conduction speakers to promote better sleep. The company's public surface
+  is the frenzband.com direct-to-consumer storefront, built on Shopify. It has no
+  first-party developer API; its machine-readable surface is entirely
+  Shopify-platform provided: an OIDC/OAuth2 Customer Account API advertised at
+  /.well-known/openid-configuration (account.frenzband.com), a Universal Commerce
+  Protocol (UCP) profile at /.well-known/ucp, published agent instructions at
+  /llms.txt, and a hosted agent-commerce MCP endpoint for buyer-approved checkout.
+  Added to the API Evangelist network as a 500 Global portfolio lead and enriched
+  from its live public storefront surface.
 url: https://raw.githubusercontent.com/api-evangelist/earable/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,11 +19,31 @@ x-backed-by:
 - 500-global
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
+image: https://frenzband.com/cdn/shop/t/64/assets/webclip.png
 tags:
 - Company
+- Wearables
+- Sleep Technology
+- Neuroscience
+- Health
+- Consumer Electronics
+- Agentic Commerce
+- Shopify
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -23,3 +53,32 @@ maintainers:
 common:
 - type: Website
   url: https://frenzband.com
+- type: DeveloperPortal
+  url: https://shopify.dev
+- type: PrivacyPolicy
+  url: https://frenzband.com/policies/privacy-policy
+- type: TermsOfService
+  url: https://frenzband.com/policies/terms-of-service
+- type: Blog
+  url: https://frenzband.com/pages/blogs
+- type: GettingStarted
+  url: https://frenzband.com/pages/how-it-works
+- type: SignUp
+  url: https://account.frenzband.com/
+- type: MCPServer
+  url: mcp/earable-mcp.yml
+- type: WellKnown
+  url: well-known/earable-well-known.yml
+- type: LLMsTxt
+  url: llms/earable-llms.txt
+- type: Authentication
+  url: authentication/earable-authentication.yml
+- type: OAuthScopes
+  url: scopes/earable-scopes.yml
+- type: DomainSecurity
+  url: security/earable-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

@@ -1,0 +1,32 @@
+generated: '2026-07-18'
+method: searched
+status: published
+source: https://frenzband.com/llms.txt + https://frenzband.com/.well-known/ucp
+notes: >-
+  Hosted agent-commerce MCP server exposed by the frenzband.com storefront via
+  the Universal Commerce Protocol (UCP, https://ucp.dev). Provided by the Shopify
+  commerce platform, not first-party Earable code. tools/list over JSON-RPC
+  requires a UCP agent-profile handshake (returned 422 "Missing profile uri"
+  without one); the tool surface below is transcribed from the store's published
+  llms.txt agent instructions. Checkout requires contemporaneous human approval.
+server:
+  name: earable-frenz-ucp
+  platform: Shopify UCP
+  transport: http
+  protocol: mcp-over-jsonrpc
+  url: https://frenz-official.myshopify.com/api/ucp/mcp
+  alias_url: https://frenzband.com/api/ucp/mcp
+  ucp_versions:
+  - '2026-04-08'
+  - '2026-01-23'
+tools:
+- name: search_catalog
+  description: Cross-store catalog search to find products matching buyer intent.
+- name: create_cart
+  description: Create a cart and add desired items.
+- name: create_checkout
+  description: Start the purchase flow.
+- name: update_checkout
+  description: Set shipping address and method on a checkout.
+- name: complete_checkout
+  description: Finalize the purchase (buyer must approve payment).

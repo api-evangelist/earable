@@ -1,0 +1,31 @@
+generated: '2026-07-18'
+method: searched
+source: https://frenzband.com/.well-known/openid-configuration
+notes: >-
+  OAuth/OIDC scopes advertised by the Shopify Customer Account API for the
+  frenzband.com storefront (scopes_supported in the OIDC discovery document).
+  Platform-provided by Shopify.
+schemes:
+- name: shopify-customer-account
+  source: https://frenzband.com/.well-known/openid-configuration
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://account.frenzband.com/authentication/oauth/authorize
+    tokenUrl: https://account.frenzband.com/authentication/oauth/token
+scopes:
+- scope: openid
+  description: OpenID Connect authentication of the storefront customer.
+  flows:
+  - authorizationCode
+- scope: email
+  description: Access to the authenticated customer's email address.
+  flows:
+  - authorizationCode
+- scope: customer-account-api:full
+  description: Full access to the Shopify Customer Account API for the signed-in customer.
+  flows:
+  - authorizationCode
+- scope: customer-account-mcp-api:full
+  description: Full access to the Customer Account MCP API surface for agent-driven customer actions.
+  flows:
+  - authorizationCode
