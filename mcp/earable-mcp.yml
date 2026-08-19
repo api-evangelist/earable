@@ -2,13 +2,11 @@ generated: '2026-07-18'
 method: searched
 status: published
 source: https://frenzband.com/llms.txt + https://frenzband.com/.well-known/ucp
-notes: >-
-  Hosted agent-commerce MCP server exposed by the frenzband.com storefront via
-  the Universal Commerce Protocol (UCP, https://ucp.dev). Provided by the Shopify
-  commerce platform, not first-party Earable code. tools/list over JSON-RPC
-  requires a UCP agent-profile handshake (returned 422 "Missing profile uri"
-  without one); the tool surface below is transcribed from the store's published
-  llms.txt agent instructions. Checkout requires contemporaneous human approval.
+notes: Hosted agent-commerce MCP server exposed by the frenzband.com storefront via the Universal Commerce
+  Protocol (UCP, https://ucp.dev). Provided by the Shopify commerce platform, not first-party Earable
+  code. tools/list over JSON-RPC requires a UCP agent-profile handshake (returned 422 "Missing profile
+  uri" without one); the tool surface below is transcribed from the store's published llms.txt agent instructions.
+  Checkout requires contemporaneous human approval.
 server:
   name: earable-frenz-ucp
   platform: Shopify UCP
@@ -30,3 +28,11 @@ tools:
   description: Set shipping address and method on a checkout.
 - name: complete_checkout
   description: Finalize the purchase (buyer must approve payment).
+deployment:
+  mode: remote
+  endpoint: https://frenz-official.myshopify.com/api/ucp/mcp
+  verified: probed
+  probe: live
+  tools: 13
+  checked: '2026-08-12'
+  source: catalog MCP census
